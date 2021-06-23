@@ -4,8 +4,6 @@ const express = require('express');
 const router = express.Router();
 
 const session = require('express-session')
-const csrf = require('csurf')
-const csrfProtection = csrf({ cookie: true })
 
 const cors = require('cors')
 router.use(cors({
@@ -35,8 +33,6 @@ var userList = [
 var inviteList = [
 
 ]
-
-router.use(csrfProtection)
 
 router.get('/', (req, res) => {
     res.send('good')

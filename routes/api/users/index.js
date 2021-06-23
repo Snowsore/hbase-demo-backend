@@ -10,8 +10,8 @@ router.use(cors({
     optionsSuccessStatus: 200
 }))
 
-// router.use('/', createProxyMiddleware({
-//     target: 'http://localhost:5000',
+// router.use('*', createProxyMiddleware({
+//     target: 'http://192.168.101.162',
 //     changeOrigin: true,
 //     pathRewrite: {'^/user' : ''}
 // }))
