@@ -34,10 +34,6 @@ var inviteList = [
 
 ]
 
-router.get('/', (req, res) => {
-    res.send('good')
-})
-
 router.get('/login', (req, res) => {
     var name = req.query.name
     var passwd = req.query.passwd
@@ -136,6 +132,16 @@ router.use('*', (req, res, next) => {
     }
 
     next()
+})
+
+router.get('/', (req, res) => {
+    
+    var id = req.session.userId
+
+    res.json({
+        id: id,
+        name: userList.filter(x => x.id == id)[0].name
+    })
 })
 
 router.delete('/user', (req, res) => {
