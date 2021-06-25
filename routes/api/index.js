@@ -3,6 +3,11 @@ var router = express.Router();
 
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
+router.get('/', (req, res) => {
+    res.json({
+        msg: 'Welcome to HBase demo backend API server'
+    })
+})
 router.use('/auth', require('./auth'))
 router.use('/users', require('./user'))
 router.use('/goods', require('./good'))
