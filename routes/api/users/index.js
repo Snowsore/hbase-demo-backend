@@ -5,7 +5,7 @@ const router = express.Router();
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
 router.use('*', createProxyMiddleware({
-    target: 'http://192.168.101.162',
+    target: process.env.PROXY,
     changeOrigin: true,
 }))
 
